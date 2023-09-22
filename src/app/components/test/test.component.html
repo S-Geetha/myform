@@ -1,0 +1,89 @@
+<form class="example-form" [formGroup]="userDetailsForm" (ngSubmit)="submit()">
+
+
+ <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Enter your Name" formControlName="name">
+  </mat-form-field><br>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Age</mat-label>
+    <input matInput placeholder="Enter your Age" formControlName="age">
+  </mat-form-field><br>
+
+  <label id="example-radio-group-label" >Gender</label>
+  <mat-radio-group aria-label="Gender" formControlName="gender" formControlName="gender">
+    <mat-radio-button value="Male">Male</mat-radio-button>
+    <mat-radio-button value="Female">Female</mat-radio-button>
+  </mat-radio-group><br><br>
+
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput placeholder="Enter your Address" formControlName="address">
+  </mat-form-field><br><br>
+
+  
+    <button class="buttons" color="warn" [disabled]="!userDetailsForm.valid">Submit</button>
+  
+
+  
+
+</form>
+
+
+<!-- <h3>{{selectedname}}</h3>
+<h3>{{selectedage}}</h3>
+<h3>{{selecteddob}}</h3>
+<h3>{{selectedgender}}</h3>
+<h3>{{selectedemail}}</h3>
+<h3>{{selectedaddress}}</h3> -->
+
+
+
+<!-- <table>
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>DOB</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Address</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Siraji</td>
+    <td>19</td>
+    <td>20</td>
+    <td>male</td>
+    <td>siraji@gmail.com</td>
+    <td>1/81</td>
+
+  </tr>
+</tbody>
+
+</table> -->
+
+<div class="container" *ngIf="selectedArr.length != 0">
+<div class="table-wrapper">
+  <table class="fl-table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Address</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor = "let data of selectedArr;let i=index" >
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.gender}}</td>
+        <td>{{data.address}}</td>
+      </tr>
+      <tbody>
+  </table>
+</div>
+</div>
